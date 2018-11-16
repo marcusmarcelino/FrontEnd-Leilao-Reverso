@@ -1,0 +1,24 @@
+<div class="container">
+<h1>Produtos a Comprar</h1>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Categoria</th>
+			<th>Quantidade a Comprar</th>
+            <th>Preço de Custo Unitário</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor=" let produto of lista">
+            <td>{{produto.id}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.categoria}}</td>
+			<td>{{produto.qtdSugCompra}}</td>
+			<td>{{produto.precoCustoMedioProd}}</td>
+        </tr>
+    </tbody>
+</table>
+<button *ngIf="usuario!='fornecedor'" class="btn btn-primary"(click)="telaHome()">Autorizar distribuição</button>
+</div>

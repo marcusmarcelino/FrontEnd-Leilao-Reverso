@@ -1,0 +1,18 @@
+<div class="container">
+	<div *ngIf="proposta">
+		<h1>Proposta código: {{proposta.id}} - Fornecedor:  {{proposta.nomeFornecedor}}</h1>
+		<p>Esta proposta foi realizada pelo participante {{proposta.nomeFornecedor}}, 
+		representando a empresa {{proposta.empresa}} CNPJ {{proposta.cnpj}}</p>
+		<p>Lance realizato para arrematar o lote de intens leiloado:</p><h2>{{proposta.valor}}</h2>
+		
+	</div>
+	<div *ngIf="!proposta">
+		<h1>Proposta não encontrado!</h1>
+		<p>A proposta que você procura não pode ser encontrado. Veja a 
+			<a routerLink="/ger_propostas/propostas">lista dos propostas</a>.
+		</p>
+	</div>
+	<button class="btn btn-primary"(click)="telaPropostas()">Sair</button>
+	<button *ngIf="usuario!='fornecedor'" class="btn btn-success"
+	(click)="selecionarProposta()">Selecionar Proposta</button>
+</div>

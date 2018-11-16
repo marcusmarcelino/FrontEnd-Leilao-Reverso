@@ -1,0 +1,28 @@
+<div class="container">
+<h1>Propostas Recebidas</h1>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome do Fornecedor</th>
+			<th>Valor da Proposta</th>
+            <th>Empresa</th>
+			<th>CNPJ</th>
+			<th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let proposta of propostas">
+			<td>{{proposta.id}}</td>
+            <td>{{proposta.nomeFornecedor}}</td>
+            <td>{{proposta.valor}}</td>
+			<td>{{proposta.empresa}}</td>
+			<td>{{proposta.cnpj}}</td>
+			<td>
+					<button class="btn btn-primary"
+					(click)="mostrarDetalhes(proposta.id)">Detalhes</button>
+			</td>
+        </tr>
+    </tbody>
+</table>
+</div>

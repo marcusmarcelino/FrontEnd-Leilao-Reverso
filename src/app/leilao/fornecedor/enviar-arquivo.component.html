@@ -1,0 +1,49 @@
+<div class="container">
+	<h2>Cadastro de Proposta</h2>
+    <form (ngSubmit)="onSubmit()" #formCadastro="ngForm">
+
+    <div class="form-group">
+        <label for="nomeFornecedor">Nome</label>
+        <input type="text" id="nomeFornecedor" name="nomeFornecedor" class="form-control"
+            [(ngModel)]="proposta.nomeFornecedor" #nomeFornecedor="ngModel"
+            placeholder="Nome do fornecedor" required>
+        <div class="alert alert-danger" [hidden]="nomeFornecedor.valid || nomeFornecedor.pristine">Você deve informar o nome do fornecedor.</div>
+    </div>
+	
+	<div class="form-group">
+        <label for="valor">Valor da Proposta</label>
+        <input type="text" id="valor" name="valor" class="form-control"
+            [(ngModel)]="proposta.valor" #valor="ngModel"
+            placeholder="Valor da proposta" required>
+        <div class="alert alert-danger" [hidden]="valor.valid || valor.pristine">Você deve informar o valor da proposta.</div>
+    </div>
+	
+	<div class="form-group">
+        <label for="empresa">Nome da Empresa</label>
+        <input type="text" id="empresa" name="empresa" class="form-control"
+            [(ngModel)]="proposta.empresa" #empresa="ngModel"
+            placeholder="Nome da empresa" required>
+        <div class="alert alert-danger" [hidden]="empresa.valid || empresa.pristine">Você deve informar o nome da empresa.</div>
+    </div>
+	
+	<div class="form-group">
+        <label for="cnpj">CNPJ</label>
+        <input type="text" id="cnpj" name="cnpj" class="form-control"
+            [(ngModel)]="proposta.cnpj" #cnpj="ngModel"
+            placeholder="CNPJ da empresa" required>
+        <div class="alert alert-danger" [hidden]="cnpj.valid || cnpj.pristine">Você deve informar o CNPJ da empresa.</div>
+    </div>
+	
+	<div class="form-group">
+        <label for="email">E-mail da Empresa</label>
+        <input type="text" id="email" name="email" class="form-control"
+            [(ngModel)]="proposta.email" #email="ngModel"
+            placeholder="E-mail da empresa" required>
+        <div class="alert alert-danger" [hidden]="email.valid || email.pristine">Você deve informar o valor da proposta.</div>
+    </div>
+	
+    <button type="button" class="btn btn-success" [disabled]="!formCadastro.form.valid" (click)="telaHome();salvar()">Salvar</button>
+	
+	<button class="btn btn-primary"(click)="telaHome()">Cancelar</button>
+    </form>
+</div>

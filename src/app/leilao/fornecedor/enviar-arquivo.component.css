@@ -1,0 +1,13 @@
+label{
+color: white;
+font-size: 25px;
+}
+h2{
+color: white;
+}
+div{
+	background-color:#2fa7b7;
+	margin:10px;
+	padding:20px;
+	border-radius:10px;
+}
